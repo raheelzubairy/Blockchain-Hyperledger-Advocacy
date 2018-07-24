@@ -34,7 +34,7 @@ We will be following the instructions presented here: http://hyperledger-fabric.
 * Updating the Ledger
 
 
-## 2. Explore IBM Code pattern
+## 3. Explore IBM Code pattern
 We will explore the marbles application to gain a greater understanding of creating an application with Hyperledger Fabric, using Fabric Node SDK and Golang chaincode.
 
 * https://github.com/IBM-Blockchain/marbles
