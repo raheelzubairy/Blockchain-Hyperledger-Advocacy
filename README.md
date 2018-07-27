@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* Complete the [Prerequisites](./tree/master/Prereqs) beforehand
+* Complete the [Prerequisites](./Prereqs) beforehand
 
 ## Agenda
 
