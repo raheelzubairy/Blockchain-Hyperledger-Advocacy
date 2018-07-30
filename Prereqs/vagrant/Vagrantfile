@@ -1,0 +1,9 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "kkbankol/hyperledger"
+  config.vm.box_version = "1.0"
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 2048
+    v.cpus = 2
+    v.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
+  end
+end
