@@ -46,8 +46,8 @@
   * Interact with network
 
 #### 2. Chaincode for Developers		
-	* Writing Chaincode
-	* Build and Test Chaincode
+* Writing Chaincode
+* Build and Test Chaincode
 
 #### 3. Writing your First App
   * Install the clients & launch the network
