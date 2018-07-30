@@ -154,7 +154,8 @@ https://www.vagrantup.com/docs/providers/installation.html
 
 Next, run the following set of commands. These commands will download the vagrant image and start a VM based off that image.
 ```
-vagrant init kkbankol/hyperledger --box-version 1.1
+#vagrant init kkbankol/hyperledger --box-version 1.1
+wget https://raw.githubusercontent.com/raheelzubairy/Blockchain-Hyperledger-Advocacy/master/Prereqs/vagrant/Vagrantfile
 vagrant up
 ```
 
@@ -163,3 +164,10 @@ At this point, you should be able to ssh into the VM with the following command
 vagrant ssh
 ```
 
+If you encounter this error
+```
+Stderr: VBoxManage: error: RawFile#0 failed to create the raw output file 
+```
+
+Please replace your Vagrantfile with the one in the [vagrant](https://github.com/raheelzubairy/Blockchain-Hyperledger-Advocacy/blob/master/Prereqs/vagrant/Vagrantfile) directory in this repository, and then run
+`vagrant up` again
