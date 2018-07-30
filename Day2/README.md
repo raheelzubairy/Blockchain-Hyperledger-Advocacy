@@ -5,11 +5,6 @@ We will go through the following exercises to understand network and application
 
 ## 1. Create a business network with Composer Playground
 
-### Prerequisite
-- Any web browser
-
-### Steps:
-
 We will following the instruction presented here: https://hyperledger.github.io/composer/latest/tutorials/playground-tutorial
 
 #### Create a model
@@ -31,16 +26,12 @@ We will following the instruction presented here: https://hyperledger.github.io/
 
 ## 2. Develop and deploy the business network locally
 
-### Prerequisite
-
-Install the development environment:
-https://hyperledger.github.io/composer/latest/installing/development-tools.html
-
 ### Steps:
 
 We will following the instruction presented [HERE](./Develop.md):
 
 #### Create and deploy the business network
+* Set up your dev environment
 * Step One: Creating a business network structure
 * Step Two: Defining a business network
 * Step Three: Generate a business network archive

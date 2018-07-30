@@ -6,12 +6,12 @@
 In this section we’ll be looking at an application to provide a broad demonstration of Fabric functionality. Notably, we will show the process for interacting with a Certificate Authority and generating enrollment certificates, after which we will leverage these identities to query and update a ledger.
 
 ## Steps
-1. [Install Samples, Binaries and Docker Images](#1-install-samples,-binaries-and-docker-images)
+1. [Install Samples, Binaries and Docker Images](#1-install-samples-binaries-and-docker-images)
 2. [Setting up your Dev Environment](#2-setting-up-your-dev-environment)
-3. [Install the clients & launch the network](#3-install-the-clients-&-launch-the-network)
+3. [Install the clients & launch the network](#3-install-the-clients--launch-the-network)
 4. [Enrolling the Admin User](#4-enrolling-the-admin-user)
 5. [Register and Enroll user1](#5-register-and-enroll-user1)
-6. [Querying the Ledger](#6-guerying-the-ledger)
+6. [Querying the Ledger](#6-querying-the-ledger)
 7. [Updating the Ledger](#7-updating-the-ledger)
 
 Lets get started!

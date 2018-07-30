@@ -9,7 +9,7 @@ We will demonstrate the use of **Chaincode APIs** for **Go** language, by implem
 
 This guide is divided in two sections:
 1. [**Writing Chaincode**](#1-writing-chaincode)
-2. [**Build and Test Chaincode**]((#2-build-and-test-chaincode))
+2. [**Build and Test Chaincode**](#2-build-and-test-chaincode)
 
 Lets get started!
 
