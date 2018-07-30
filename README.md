@@ -1,5 +1,9 @@
 # Blockchain-Hyperledger-Advocacy
 
+## Prerequisites
+
+* Complete the [Prerequisites](./Prereqs) beforehand
+
 ## Agenda
 
 #### DÍA 1 – Blockchain Foundations
@@ -34,23 +38,16 @@
 1. Build your first network
     * Generate network artifacts
     * Start the network
-    * Environment variables
     * Create & join Channel
-    * Update the anchor peers
     * Install & Instantiate Chaincode
     * Interact with network
 
 2. Writing your First App
-    * Setting up your Dev Environment
     * Install the clients & launch the network
-    * Enrolling the Admin User
-    * Register and Enroll `user1`
+    * Enrolling User
     * Querying the Ledger
     * Updating the Ledger
 
 3. Explore IBM Code pattern  
     * https://github.com/IBM-Blockchain/marbles
-    * Review architecture
-    * Review chaincode
-    * Review sdk to enroll users
-    * Review sdk to interact with network
+    * Review architecture, chaincode, sdk to enroll users and interact with network

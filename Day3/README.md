@@ -11,12 +11,12 @@ http://hyperledger-fabric.readthedocs.io/en/latest/prereqs.html
 
 ## 1. Build your first network
 
-We will following the instruction presented here:
-https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html
+We will following the instruction presented [HERE](./BYFN.md):
 
-* Generate network artifacts
+* Install Samples, Binaries and Docker Images
+* Generate Network artifacts
+* Create a Channel Configuration Transaction
 * Start the network
-* Environment variables
 * Create & join Channel
 * Update the anchor peers
 * Install & Instantiate Chaincode
@@ -24,8 +24,9 @@ https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html
 
 ## 2. Writing your First App
 
-We will be following the instructions presented here: http://hyperledger-fabric.readthedocs.io/en/latest/write_first_app.html
+We will be following the instructions presented [HERE](./FirstApp.md): 
 
+* Install Samples, Binaries and Docker Images
 * Setting up your Dev Environment
 * Install the clients & launch the network
 * Enrolling the Admin User

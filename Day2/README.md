@@ -56,6 +56,9 @@ These code patterns demonstrates business network for different use cases and ho
 
 #### Decentralized energy network with Hyperledger Composer
 * https://github.com/IBM/Decentralized-Energy-Composer
+* Create an Angular App to interact with the Composer Network through Rest Server.
 
 #### Customer loyalty program with Blockchain
 * https://github.com/IBM/customer-loyalty-program
+* Deploy the network to IBM Blockchain Starter Plan
+* Interact with the network through Composer API
