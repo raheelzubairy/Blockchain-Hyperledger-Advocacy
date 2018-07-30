@@ -22,9 +22,15 @@ We will following the instruction presented [HERE](./BYFN.md):
 * Install & Instantiate Chaincode
 * Interact with network
 
-## 2. Writing your First App
+## 2. Chaincode for Developers
+We will be following the instructions presented [HERE](./Chaincode.md):
+* Writing Chaincode
+* Build and Test Chaincode
 
-We will be following the instructions presented [HERE](./FirstApp.md): 
+
+## 3. Writing your First App
+
+We will be following the instructions presented [HERE](./FirstApp.md):
 
 * Install Samples, Binaries and Docker Images
 * Setting up your Dev Environment
@@ -35,11 +41,11 @@ We will be following the instructions presented [HERE](./FirstApp.md):
 * Updating the Ledger
 
 
-## 3. Explore IBM Code pattern
+## 4. Explore IBM Code pattern
 We will explore the marbles application to gain a greater understanding of creating an application with Hyperledger Fabric, using Fabric Node SDK and Golang chaincode.
 
 * https://github.com/IBM-Blockchain/marbles
 * Review architecture
 * Review chaincode
-* Review sdk to enroll users
-* Review sdk to interact with network
+* Review sdk to enroll users and interact with network
+* Deploying chaincode on IBM Blockchain Starter Plan

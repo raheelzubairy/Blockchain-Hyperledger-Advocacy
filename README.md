@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* Complete the [Prerequisites](./Prereqs) beforehand
+* Complete the [Prerequisites](./tree/master/Prereqs) beforehand
 
 ## Agenda
 
@@ -42,12 +42,17 @@
     * Install & Instantiate Chaincode
     * Interact with network
 
+2. Chaincode for Developers		
+		* Writing Chaincode
+		* Build and Test Chaincode
+
 2. Writing your First App
     * Install the clients & launch the network
     * Enrolling User
     * Querying the Ledger
     * Updating the Ledger
 
-3. Explore IBM Code pattern  
+4. Explore IBM Code pattern  
     * https://github.com/IBM-Blockchain/marbles
     * Review architecture, chaincode, sdk to enroll users and interact with network
+		* Deploying chaincode on IBM Blockchain Starter Plan

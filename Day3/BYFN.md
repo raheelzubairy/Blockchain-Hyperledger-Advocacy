@@ -5,7 +5,21 @@
 
 The build your first network (BYFN) scenario provisions a sample Hyperledger Fabric network consisting of two organizations, each maintaining two peer nodes, and a “solo” ordering service.
 
-### Install Samples, Binaries and Docker Images
+## Steps
+1. [Install Samples, Binaries and Docker Images](#1-install-samples,-binaries-and-docker-images)
+2. [Generate Network artifacts](#2-generate-network-artifacts)
+3. [Create a Channel Configuration Transaction](#3-create-a-channel-configuration-transaction)
+4. [Start the network](#4-start-the-network)
+5. [Create & join Channel](#5-create-&-join-channel)
+6. [Update the anchor peers](#6-update-the-anchor-peers)
+7. [Install & Instantiate Chaincode](#7-install-&-instantiate-chaincode)
+8. [Interact with network](#8-interact-with-network)
+
+Lets get started!
+
+
+
+## 1. Install Samples, Binaries and Docker Images
 
 * Create a folder `BYFN`.  Navigate into the folder.
 
@@ -28,7 +42,7 @@ export PATH=$(pwd):$PATH
 ```
 
 
-### Generate Network Artifacts
+## 2. Generate Network Artifacts
 
 This first step generates all of the certificates and keys for our various network entities, the genesis block used to bootstrap the ordering service, and a collection of configuration transactions required to configure a Channel.
 
@@ -39,7 +53,7 @@ cd ../first-network
 
 You will see a brief description as to what will occur, along with a yes/no command line prompt. Respond with a y or hit the return key to execute the described action.
 
-#### Bring up the network
+### Bring up the network
 
 Next, you can bring the network up with one of the following commands:
 
@@ -55,7 +69,7 @@ or
 
 This will ensure correct setup of Fabric dependencies.
 
-#### Bring Down the Network
+### Bring Down the Network
 
 Finally, let’s bring it all down so we can explore the network setup one step at a time. The following will kill your containers, remove the crypto material and four artifacts, and delete the chaincode images from your Docker Registry:
 
@@ -63,7 +77,7 @@ Finally, let’s bring it all down so we can explore the network setup one step 
 ./byfn.sh down
 ```
 
-#### Manually generate the artifacts
+### Manually generate the artifacts
 
 We will use the [cryptogen tool](https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html#crypto-generator) to generate the cryptographic material (x509 certs and signing keys) for our various network entities. These certificates are representative of identities, and they allow for sign/verify authentication to take place as our entities communicate and transact.
 
@@ -109,7 +123,7 @@ You should see an output similar to the following in your terminal:
 2017-10-26 19:21:56.309 EDT [common/tools/configtxgen] doOutputBlock -> INFO 003 Writing genesis block
 ```
 
-### Create a Channel Configuration Transaction
+## 3. Create a Channel Configuration Transaction
 
 Next, we need to create the channel transaction artifact.
 
@@ -136,7 +150,7 @@ Now, we will define the anchor peer for Org2 on the same channel:
 ```
 
 
-## Start the network
+## 4. Start the network
 
 We will leverage a script to spin up our network. The docker-compose file references the images that we have previously downloaded, and bootstraps the orderer with our previously generated `genesis.block`. We want to go through the commands manually in order to expose the syntax and functionality of each call.
 
@@ -158,7 +172,7 @@ Creating cli                    ... done
 ```
 
 
-### Create & Join Channel
+## 5. Create & Join Channel
 
 Recall that we created the channel configuration transaction using the `configtxgen` tool in the `Create a Channel Configuration Transaction` section, above. You can repeat that process to create additional channel configuration transactions, using the same or different profiles in the `configtx.yaml` that you pass to the `configtxgen` tool. Then you can repeat the process defined in this section to establish those other channels in your network.
 
@@ -220,7 +234,7 @@ This should return:
 ```
 
 
-## Update the anchor peers
+## 6. Update the anchor peers
 
 The following commands are channel updates and they will propagate to the definition of the channel. In essence, we adding additional configuration information on top of the channel’s genesis block to define the anchor peers.
 
@@ -252,7 +266,7 @@ You should see:
 ```
 
 
-### Install & Instantiate Chaincode
+## 7. Install & Instantiate Chaincode
 
 Applications interact with the blockchain ledger through chaincode. As such we need to install the chaincode on every peer that will execute and endorse our transactions, and then instantiate the chaincode on the channel.
 

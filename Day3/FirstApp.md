@@ -5,9 +5,18 @@
 
 In this section we’ll be looking at an application to provide a broad demonstration of Fabric functionality. Notably, we will show the process for interacting with a Certificate Authority and generating enrollment certificates, after which we will leverage these identities to query and update a ledger.
 
+## Steps
+1. [Install Samples, Binaries and Docker Images](#1-install-samples,-binaries-and-docker-images)
+2. [Setting up your Dev Environment](#2-setting-up-your-dev-environment)
+3. [Install the clients & launch the network](#3-install-the-clients-&-launch-the-network)
+4. [Enrolling the Admin User](#4-enrolling-the-admin-user)
+5. [Register and Enroll user1](#5-register-and-enroll-user1)
+6. [Querying the Ledger](#6-guerying-the-ledger)
+7. [Updating the Ledger](#7-updating-the-ledger)
 
+Lets get started!
 
-## Install Samples, Binaries and Docker Images
+## 1. Install Samples, Binaries and Docker Images
 
 * Create a a new folder.  Navigate into the folder.
 
@@ -30,7 +39,7 @@ export PATH=$(pwd):$PATH
 ```
 
 
-## Setting up your Dev Environment
+## 2. Setting up your Dev Environment
 
  Navigate to the `fabcar` subdirectory within your `fabric-samples` repository and take a look at what’s inside
 
@@ -63,7 +72,7 @@ docker rmi dev-peer0.org1.example.com-fabcar-1.0-5c906e402ed29f20260ae42283216aa
 ```
 
 
-## Install the clients & launch the network
+## 3. Install the clients & launch the network
 
 Run the following command to install the Fabric dependencies for the applications. We are concerned with `fabric-ca-client` which will allow our app(s) to communicate with the CA server and retrieve identity material, and with `fabric-client` which allows us to load the identity material and talk to the peers and ordering service.
 
@@ -77,7 +86,7 @@ Launch your network using the `startFabric.sh` shell script. This command will s
 ./startFabric.sh
 ```
 
-## Enrolling the Admin User
+## 4. Enrolling the Admin User
 
 To stream your CA logs, split your terminal or open a new shell and issue the following:
 
@@ -98,7 +107,7 @@ Successfully enrolled admin user "admin"
 Assigned the admin user to the fabric client ::{"name":"admin","mspid":"Org1MSP","roles":null,"affiliation":"","enrollmentSecret":"","enrollment":{"signingIdentity":"94cd4cccf215f797f00e521e904b1acfe6bd544534d7b2a2741c6cc7d7615dc9","identity":{"certificate":"-----BEGIN CERTIFICATE-----\nMIICATCCAaigAwIBAgIUJoqe45ojCRvoI27uuOI3RSP8xakwCgYIKoZIzj0EAwIw\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTgwNzI2MjIyMDAwWhcNMTkwNzI2MjIy\nNTAwWjAhMQ8wDQYDVQQLEwZjbGllbnQxDjAMBgNVBAMTBWFkbWluMFkwEwYHKoZI\nzj0CAQYIKoZIzj0DAQcDQgAE8vsF8d2zqERhDn1Rvraa/Kjx2Iyo99S9PpI5kbWK\nRAV46l1LJKohB657zUfuIcfvqKRDLcR207z4KRseLCmWbaNsMGowDgYDVR0PAQH/\nBAQDAgeAMAwGA1UdEwEB/wQCMAAwHQYDVR0OBBYEFIyi3ExFBsb4Sk0sY6ACWLLh\nNJ8MMCsGA1UdIwQkMCKAIEI5qg3NdtruuLoM2nAYUdFFBNMarRst3dusalc2Xkl8\nMAoGCCqGSM49BAMCA0cAMEQCIGQgO8WJJg56KMqsnvZfJ2jnOhxJlTmJ3wqW7oMB\n2aM2AiA2Cnspw00FHarP4I/Sy4uaOp3hFG6p7EvM4oc6c0O9Bg==\n-----END CERTIFICATE-----\n"}}}
 ```
 
-## Register and Enroll user1
+## 5. Register and Enroll user1
 
 With our newly generated admin eCert, we will now communicate with the CA server once more to register and enroll a new user. This user – `user1` – will be the identity we use when querying and updating the ledger. It’s important to note here that it is the `admin` identity that is issuing the registration and enrollment calls for our new user (i.e. this user is acting in the role of a registrar). Send the register and enroll calls for `user1`:
 
@@ -114,7 +123,7 @@ Successfully enrolled member user "user1"
 User1 was successfully registered and enrolled and is ready to interact with the fabric network
 ```
 
-## Querying the Ledger
+## 6. Querying the Ledger
 
 Let’s run our `query.js` program to return a listing of all the cars on the ledger. We will use our second identity – `user1` – as the signing entity for this application. The following line in our program specifies `user1` as the signer:
 
@@ -175,7 +184,7 @@ You should see the following:
 {"colour":"black","make":"Tesla","model":"S","owner":"Adriana"}
 ```
 
-## Updating the Ledger
+## 7. Updating the Ledger
 
 Now that we’ve done a few ledger queries and added a bit of code, we’re ready to update the ledger. There are a lot of potential updates we could make, but let’s start by creating a car.
 

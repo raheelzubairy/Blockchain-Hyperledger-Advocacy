@@ -38,8 +38,7 @@ https://hyperledger.github.io/composer/latest/installing/development-tools.html
 
 ### Steps:
 
-We will be following the instructions presented here:
- https://hyperledger.github.io/composer/latest/tutorials/developer-tutorial
+We will following the instruction presented [HERE](./Develop.md):
 
 #### Create and deploy the business network
 * Step One: Creating a business network structure
