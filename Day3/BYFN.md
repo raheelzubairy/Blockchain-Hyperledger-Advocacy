@@ -22,6 +22,11 @@ Lets get started!
 ## 1. Install Samples, Binaries and Docker Images
 
 * Create a folder `BYFN`.  Navigate into the folder.
+```
+cd ~/
+mkdir BYFN
+cd BYFN
+```
 
 * The command that follows will perform the following steps:
 
@@ -32,7 +37,7 @@ Lets get started!
 
 Run the command:
 ```
-curl -sSL http://bit.ly/2ysbOFE | bash -s 1.2.0
+curl -sSL http://bit.ly/2ysbOFE | bash -s 1.1.0
 ```
 
 * Add binaries to your PATH environment variable
