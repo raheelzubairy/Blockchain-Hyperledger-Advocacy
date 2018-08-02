@@ -10,9 +10,9 @@ The build your first network (BYFN) scenario provisions a sample Hyperledger Fab
 2. [Generate Network artifacts](#2-generate-network-artifacts)
 3. [Create a Channel Configuration Transaction](#3-create-a-channel-configuration-transaction)
 4. [Start the network](#4-start-the-network)
-5. [Create & join Channel](#5-create-&-join-channel)
+5. [Create and join Channel](#5-create-and-join-channel)
 6. [Update the anchor peers](#6-update-the-anchor-peers)
-7. [Install & Instantiate Chaincode](#7-install-&-instantiate-chaincode)
+7. [Install and Instantiate Chaincode](#7-install-and-instantiate-chaincode)
 8. [Interact with network](#8-interact-with-network)
 
 Lets get started!
@@ -296,6 +296,8 @@ This should return:
 2018-07-26 23:44:48.868 UTC [chaincodeCmd] checkChaincodeCmdParams -> INFO 001 Using default escc
 2018-07-26 23:44:48.868 UTC [chaincodeCmd] checkChaincodeCmdParams -> INFO 002 Using default vscc
 ```
+
+## 8. Interact with network
 
 ### Query
 

@@ -6,13 +6,13 @@
 This tutorial will walk you through building a Hyperledger Composer blockchain solution from scratch. In the space of a few hours you will be able to go from an idea for a disruptive blockchain innovation, to executing transactions against a real Hyperledger Fabric blockchain network.
 
 ## Sections
-* [Set up your dev environment](#-set-up-your-dev-environment)
-* [Step One: Creating a business network structure](#-step-one:-creating-a-business-network-structure)
-* [Step Two: Defining a business network](#-step-two:-defining-a-business-network)
-* [Step Three: Generate a business network archive](#-step-three:-generate-a-business-network-archive)
-* [Step Four: Deploying the business network](#-step-four:-deploying-the-business-network)
-* [Step Five: Generating a REST server](#-step-five:-generating-a-REST-server)
-* [Step Six: Generating an application](#-step-six:-generating-an-application)
+* [Set up your dev environment](#set-up-your-dev-environment)
+* [Step One: Creating a business network structure](#step-one-creating-a-business-network-structure)
+* [Step Two: Defining a business network](#step-two-defining-a-business-network)
+* [Step Three: Generate a business network archive](#step-three-generate-a-business-network-archive)
+* [Step Four: Deploying the business network](#step-four-deploying-the-business-network)
+* [Step Five: Generating a REST server](#step-five-generating-a-rest-server)
+* [Step Six: Generating an application](#step-six-generating-an-application)
 
 ## Set up your dev environment
 
