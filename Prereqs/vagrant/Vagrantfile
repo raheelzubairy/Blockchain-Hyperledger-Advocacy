@@ -1,9 +1,14 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "kkbankol/hyperledger"
   config.vm.box_version = "1.1"
+  #config.vm.network "forwarded_port", guest: 7051, host: 7051
+  for i in [3000, 4200, 7050, 7051, 7053, 8000]
+     config.vm.network :forwarded_port, guest: i, host: i
+  end  
   config.vm.provider "virtualbox" do |v|
-    v.memory = 2048
+    v.memory = 4096
     v.cpus = 2
     v.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
   end
 end
+
