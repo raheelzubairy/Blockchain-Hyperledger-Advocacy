@@ -29,7 +29,7 @@ Lets get started!
 
 Run the command:
 ```
-curl -sSL http://bit.ly/2ysbOFE | bash -s 1.2.0
+curl -sSL http://bit.ly/2ysbOFE | bash -s 1.1.0
 ```
 
 * Add binaries to your PATH environment variable
