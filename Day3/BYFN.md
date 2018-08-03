@@ -21,9 +21,14 @@ Lets get started!
 
 ## 1. Install Samples, Binaries and Docker Images
 
+```
+docker kill $(docker ps -q)
+docker rm $(docker ps -aq)
+docker rmi $(docker images dev-* -q)
+```
+
 * Create a folder `BYFN`.  Navigate into the folder.
 ```
-cd ~/
 mkdir BYFN
 cd BYFN
 ```
@@ -69,7 +74,7 @@ Next, you can bring the network up with one of the following commands:
 or
 
 ```
-./byfn.sh - m up
+./byfn.sh -m up
 ```
 
 This will ensure correct setup of Fabric dependencies.
@@ -293,7 +298,7 @@ Next, instantiate the chaincode on the channel. This will initialize the chainco
 In the command below you’ll notice that we specify our policy as `-P "AND ('Org1MSP.peer','Org2MSP.peer')"`. This means that we need “endorsement” from a peer belonging to Org1 AND Org2 (i.e. two endorsement). If we changed the syntax to OR then we would need only one endorsement.
 
 ```
-peer chaincode instantiate -o orderer.example.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C $CHANNEL_NAME -n mycc -v 1.0 -c '{"Args":["init","a", "100", "b","200"]}' -P "AND ('Org1MSP.peer','Org2MSP.peer')"
+peer chaincode instantiate -o orderer.example.com:7050 --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n mycc -l golang -v 1.0 -c '{"Args":["init","a","100","b","200"]}' -P 'OR	('\''Org1MSP.peer'\'','\''Org2MSP.peer'\'')'
 ```
 
 This should return:
@@ -309,7 +314,7 @@ This should return:
 Let’s query for the value of `a` to make sure the chaincode was properly instantiated and the state DB was populated. The syntax for query is as follows:
 
 ```
-peer chaincode query -C $CHANNEL_NAME -n mycc -c '{"Args":["query","a"]}'
+peer chaincode query -C mychannel -n mycc -c '{"Args":["query","a"]}'
 ```
 
 This should return:
@@ -322,19 +327,23 @@ This should return:
 Now let’s move `10` from `a` to `b`. This transaction will cut a new block and update the state DB. The syntax for invoke is as follows:  
 
 
-```
+<!-- ```
 peer chaincode invoke -o orderer.example.com:7050 --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C $CHANNEL_NAME -n mycc --peerAddresses peer0.org1.example.com:7051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses peer0.org2.example.com:7051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"Args":["invoke","a","b","10"]}'
+``` -->
 ```
-
-
+peer chaincode invoke -o orderer.example.com:7050 --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n mycc -c '{"Args":["invoke","a","b","10"]}'
+```
 
 ### Query
 
 Let’s confirm that our previous invocation executed properly. We initialized the key `a` with a value of `100` and just removed `10` with our previous invocation. Therefore, a query against `a` should reveal `90`. The syntax for query is as follows.
 
 
-```
+<!-- ```
 peer chaincode query -C $CHANNEL_NAME -n mycc -c '{"Args":["query","a"]}'
+``` -->
+```
+peer chaincode query -C mychannel -n mycc -c '{"Args":["query","a"]}'
 ```
 
 This should return:
